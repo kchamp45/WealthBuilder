@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "232581545932",
+    "firebase_url": "https://wealthbuilder-12a75.firebaseio.com",
+    "project_id": "wealthbuilder-12a75",
+    "storage_bucket": "wealthbuilder-12a75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232581545932:android:259ed7cad3406856",
+        "android_client_info": {
+          "package_name": "com.epicodus.wealthbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232581545932-89toc7617t9213rc3gui7d9t3trruvgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.wealthbuilder",
+            "certificate_hash": "3d93e4100901f454dff40bf82f475a75c8737a8b"
+          }
+        },
+        {
+          "client_id": "232581545932-ecbrk5rsfhld6fj7m33mnt6cjc58t1bl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz2nz8hP4232MTPdmi-iO6yTBrEN1_jls"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232581545932-ecbrk5rsfhld6fj7m33mnt6cjc58t1bl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
