@@ -11,18 +11,20 @@ import android.widget.Toast;
 
 import com.epicodus.wealthbuilder.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    private EditText mIncomeEditText;
-    private Button mSubmitIncomeButton;
+    @Bind(R.id.incomeEditText) EditText mIncomeEditText;
+    @Bind(R.id.submitIncomeButton) Button mSubmitIncomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mIncomeEditText = (EditText) findViewById(R.id.incomeEditText);
-        mSubmitIncomeButton = (Button) findViewById(R.id.submitIncomeButton);
+        ButterKnife.bind(this);
         mSubmitIncomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,14 +7,18 @@ import android.widget.TextView;
 
 import com.epicodus.wealthbuilder.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class ExpenseActivity extends AppCompatActivity {
-    private TextView mIncomeTextView;
+    @Bind(R.id.incomeTextView) TextView mIncomeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense);
-        mIncomeTextView = (TextView) findViewById(R.id.incomeTextView);
+        ButterKnife.bind(this);
+        
         Intent intent = getIntent();
         String income = intent.getStringExtra("income");
         mIncomeTextView.setText("Here is your income: " + income);
