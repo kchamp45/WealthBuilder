@@ -31,15 +31,16 @@
         android:id="@+id/textView2" />
 
     <EditText
+        android:id="@+id/incomeEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/incomeEditText"
-        android:background="@color/colorTextIcons"
         android:layout_above="@+id/submitIncomeButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:padding="5dp"
+        android:background="@color/colorTextIcons"
         android:hint="Enter Your Income"
-        android:layout_centerHorizontal="true" />
+        android:inputType="number"
+        android:padding="5dp" />
 
     <Button
         android:layout_width="wrap_content"
