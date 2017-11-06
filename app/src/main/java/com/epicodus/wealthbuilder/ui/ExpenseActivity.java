@@ -41,23 +41,15 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
         int misc = Integer.parseInt(mMiscEditText.getText().toString());
         int totalExpense = housing + transportation + food + misc;
 
+        Intent intent = getIntent();
+        String income = intent.getStringExtra("income");
+
         if(v == mSubmitExpenseButton) {
 
             Intent nextIntent = new Intent(ExpenseActivity.this, DepositActivity.class);
             nextIntent.putExtra("expense", totalExpense);
+            nextIntent.putExtra("income", income);
             startActivity(nextIntent);
-
-//            Intent intent = getIntent();
-//            String income = intent.getStringExtra("income");
-//
-//            Bundle args = new Bundle();
-//            args.putParcelable("income", Parcels.wrap(income));
-//            Intent nextIntent = new Intent(ExpenseActivity.this, DepositActivity.class);
-//            nextIntent.putExtras(args);
-//            nextIntent.putExtra("expense", totalExpense);
-//            startActivity(intent);
-
-
         }
     }
 

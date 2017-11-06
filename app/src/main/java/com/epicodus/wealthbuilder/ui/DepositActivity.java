@@ -3,6 +3,7 @@ package com.epicodus.wealthbuilder.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,15 +24,16 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-//        String income = intent.getStringExtra("income");
-//        int monthlyIncome = Integer.parseInt(income) / 12;
-//        mIncomeTextView.setText("Here is your income per month: " + monthlyIncome);
+        String income = intent.getStringExtra("income");
+        int monthlyIncome = Integer.parseInt(income) / 12;
+        Log.d("DepositActivity", income);
+        mIncomeTextView.setText("Here is your income per month: " + "$"+ monthlyIncome);
 //
         int expense = intent.getIntExtra("expense", 0);
-        mExpenseTextView.setText("Here is your expense per month: " + expense);
+        mExpenseTextView.setText("Here is your expense per month: " + "$"+ expense);
 //
-//        int net = monthlyIncome - monthlyExpense;
-//        mNetTextView.setText("Here's what you have left to save: " + net);
+        int net = monthlyIncome - expense;
+        mNetTextView.setText("Here's what you have left to save: " + "$" + net);
 
     }
 
