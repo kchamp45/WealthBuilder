@@ -23,9 +23,10 @@
         <activity android:name=".ui.ExpenseActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.wealthbuilder.ui.MainActivity"></meta-data>
+                android:value="com.epicodus.wealthbuilder.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.DepositActivity"></activity>
+        <activity android:name=".ui.DepositActivity" />
+        <activity android:name=".ui.WealthActivity"></activity>
     </application>
 
 </manifest>
