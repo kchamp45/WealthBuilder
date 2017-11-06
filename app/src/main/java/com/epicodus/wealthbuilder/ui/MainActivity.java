@@ -14,7 +14,7 @@ import com.epicodus.wealthbuilder.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.incomeEditText) EditText mIncomeEditText;
     @Bind(R.id.submitIncomeButton) Button mSubmitIncomeButton;
@@ -25,16 +25,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        mSubmitIncomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String income = mIncomeEditText.getText().toString();
-                Log.d(TAG, income);
-            Toast.makeText(MainActivity.this, "$$Hooray$$!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this, ExpenseActivity.class);
-                intent.putExtra("income", income);
-                startActivity(intent);
-            }
-        });
+        mSubmitIncomeButton.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+        String income = mIncomeEditText.getText().toString();
+        Toast.makeText(MainActivity.this, "$$$$$!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, ExpenseActivity.class);
+        intent.putExtra("income", income);
+        startActivity(intent);
+    }
+
 }
+

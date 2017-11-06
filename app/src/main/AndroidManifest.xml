@@ -19,13 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.CreateAccountActivity" />
-        <activity android:name=".ui.LoginActivity"></activity>
+        <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.ExpenseActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.wealthbuilder.ui.MainActivity">
-            </meta-data>
+                android:value="com.epicodus.wealthbuilder.ui.MainActivity"></meta-data>
         </activity>
+        <activity android:name=".ui.DepositActivity"></activity>
     </application>
 
 </manifest>

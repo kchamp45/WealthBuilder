@@ -7,15 +7,6 @@
     tools:context="com.epicodus.wealthbuilder.ui.ExpenseActivity">
 
     <TextView
-        android:id="@+id/incomeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="income"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,9 +24,9 @@
         android:hint="Housing"
         android:inputType="number"
         android:padding="5dp"
+        android:layout_marginTop="64dp"
         android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/foodEditText"
@@ -71,9 +62,10 @@
         android:hint="Misc"
         android:inputType="number"
         android:padding="5dp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/transportationEditText"
-        android:layout_alignStart="@+id/transportationEditText" />
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/transportationEditText"
+        android:layout_alignRight="@+id/foodEditText"
+        android:layout_alignEnd="@+id/foodEditText" />
 
     <Button
         android:layout_width="wrap_content"
@@ -81,8 +73,22 @@
         android:text="What's left"
         android:id="@+id/submitExpenseButton"
         android:background="@android:color/holo_green_dark"
+        android:layout_marginBottom="32dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp" />
+        android:layout_toLeftOf="@+id/transportationEditText"
+        android:layout_toStartOf="@+id/transportationEditText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See chart"
+        android:id="@+id/expenseChartButton"
+        android:background="@android:color/holo_green_dark"
+        android:layout_alignBaseline="@+id/submitExpenseButton"
+        android:layout_alignBottom="@+id/submitExpenseButton"
+        android:layout_toRightOf="@+id/housingEditText"
+        android:layout_toEndOf="@+id/housingEditText"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
 
 </RelativeLayout>
