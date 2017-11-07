@@ -18,7 +18,10 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.incomeTextView) TextView mIncomeTextView;
     @Bind(R.id.expenseTextView) TextView mExpenseTextView;
     @Bind(R.id.netTextView) TextView mNetTextView;
-    @Bind(R.id.depositEditText) EditText mDepositEditText;
+    @Bind(R.id.initialDepositEditText) EditText mInitialDepositEditText;
+    @Bind(R.id.additionalDepositEditText) EditText mAdditionalDepositEditText;
+    @Bind(R.id.durationEditText) EditText mDurationEditText;
+
     @Bind(R.id.depositButton) Button mDepositButton;
 
     @Override
@@ -40,16 +43,19 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
         mNetTextView.setText("Net: " + "$" + net);
 
         mDepositButton.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
-        String deposit = mDepositEditText.getText().toString();
+        String initialDeposit = mInitialDepositEditText.getText().toString();
+        String additionalDeposit = mAdditionalDepositEditText.getText().toString();
+        String duration = mDurationEditText.getText().toString();
 
         if(v == mDepositButton) {
             Intent newIntent = new Intent(DepositActivity.this, WealthActivity.class);
-            newIntent.putExtra("deposit", deposit);
+            newIntent.putExtra("iDeposit", initialDeposit);
+            newIntent.putExtra("aDeposit", additionalDeposit);
+            newIntent.putExtra("duration", duration);
             startActivity(newIntent);
         }
     }

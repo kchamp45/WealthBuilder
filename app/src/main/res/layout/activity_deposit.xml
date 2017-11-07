@@ -39,34 +39,90 @@
         android:id="@+id/depositTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How much do you want to save per month?"
+        android:text="Now you know what you have left per month, how much of this amount would like to save and invest?"
         android:layout_below="@+id/netTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="21dp" />
 
+    <TextView
+        android:id="@+id/initialTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's start with an initial deposit amount, if any:"
+        android:layout_below="@+id/depositTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp" />
+
     <EditText
-        android:id="@+id/depositEditText"
+        android:id="@+id/initialDepositEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorTextIcons"
-        android:hint="Deposit amount"
+        android:hint="Initial deposit"
         android:inputType="number"
         android:padding="5dp"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/depositTextView"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/initialTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/additionalDepositTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Then enter the amount you want to save per month:"
+        android:layout_below="@id/initialDepositEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"/>
+
+    <EditText
+        android:id="@+id/additionalDepositEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextIcons"
+        android:hint="Save amount per month"
+        android:inputType="number"
+        android:padding="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/additionalDepositTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/durationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How many years do you plan to let the money grow?"
+        android:layout_below="@id/additionalDepositEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"/>
+
+    <EditText
+        android:id="@+id/durationEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextIcons"
+        android:hint="For how long?"
+        android:inputType="number"
+        android:padding="5dp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/durationTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Deposit"
+        android:text="Future Account Balance"
         android:id="@+id/depositButton"
         android:background="@android:color/holo_green_dark"
-        android:layout_below="@+id/depositEditText"
-        android:layout_alignRight="@+id/depositEditText"
-        android:layout_alignEnd="@+id/depositEditText"
-        android:layout_marginTop="54dp" />
+        android:layout_marginTop="58dp"
+        android:layout_below="@+id/durationEditText"
+        android:layout_toRightOf="@+id/durationEditText"
+        android:layout_toEndOf="@+id/durationEditText" />
 
 </RelativeLayout>
