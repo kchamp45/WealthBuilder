@@ -23,6 +23,7 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.foodEditText) EditText mFoodEditText;
     @Bind(R.id.miscEditText) EditText mMiscEditText;
     @Bind(R.id.submitExpenseButton) Button mSubmitExpenseButton;
+    @Bind(R.id.expenseChartButton) Button mExpenseChartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
 
         mSubmitExpenseButton.setOnClickListener(this);
+        mExpenseChartButton.setOnClickListener(this);
     }
 
     @Override
@@ -50,6 +52,14 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
             nextIntent.putExtra("expense", totalExpense);
             nextIntent.putExtra("income", income);
             startActivity(nextIntent);
+        }
+        if(v == mExpenseChartButton) {
+            Intent chartIntent = new Intent(ExpenseActivity.this, PieChartActivity.class);
+            chartIntent.putExtra("housing", housing);
+            chartIntent.putExtra("transportation", transportation);
+            chartIntent.putExtra("food", food);
+            chartIntent.putExtra("misc", misc);
+            startActivity(chartIntent);
         }
     }
 

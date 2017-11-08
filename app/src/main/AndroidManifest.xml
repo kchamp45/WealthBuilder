@@ -26,7 +26,8 @@
                 android:value="com.epicodus.wealthbuilder.ui.MainActivity" />
         </activity>
         <activity android:name=".ui.DepositActivity" />
-        <activity android:name=".ui.WealthActivity"></activity>
+        <activity android:name=".ui.WealthActivity" />
+        <activity android:name=".ui.PieChartActivity"></activity>
     </application>
 
 </manifest>

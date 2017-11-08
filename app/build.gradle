@@ -58,6 +58,7 @@ dependencies {
     compile 'com.firebaseui:firebase-ui-database:0.4.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'org.parceler:parceler:1.1.6'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
 }
 apply plugin: 'com.google.gms.google-services'
 
