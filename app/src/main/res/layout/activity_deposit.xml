@@ -4,61 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bdd_gradients"
     tools:context="com.epicodus.wealthbuilder.ui.DepositActivity">
 
     <TextView
         android:id="@+id/incomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:text="income"
-        android:textColor="@color/colorPrimaryText" />
+        android:textColor="@color/colorPrimaryText"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/depositButton"
+        android:layout_toStartOf="@+id/depositButton" />
 
     <TextView
         android:id="@+id/expenseTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/incomeTextView"
-        android:layout_marginTop="21dp"
         android:text="expense"
-        android:textColor="@color/colorPrimaryText" />
+        android:textColor="@color/colorPrimaryText"
+        android:layout_alignBaseline="@+id/incomeTextView"
+        android:layout_alignBottom="@+id/incomeTextView"
+        android:layout_toRightOf="@+id/durationEditText"
+        android:layout_toEndOf="@+id/durationEditText" />
 
     <TextView
         android:id="@+id/netTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/expenseTextView"
-        android:layout_marginTop="21dp"
         android:text="What's left"
-        android:textColor="@color/colorPrimaryText" />
+        android:textColor="@color/colorPrimaryText"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/incomeTextView"
+        android:layout_alignLeft="@+id/initialDepositEditText"
+        android:layout_alignStart="@+id/initialDepositEditText"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/depositTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:text="How much of this net amount would like to save and invest?"
+        android:textColor="@color/colorAmazing"
+        android:layout_marginTop="32dp"
         android:layout_below="@+id/netTextView"
-        android:layout_marginTop="21dp"
-        android:text="Now you know what you have left per month, how much of this amount would like to save and invest?"
-        android:textColor="@android:color/holo_blue_dark" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/initialTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/depositTextView"
-        android:layout_marginTop="21dp"
-        android:text="Let's start with an initial deposit amount, if any:"
-        android:textColor="@android:color/holo_green_dark" />
+        android:text="1. Let's start with an initial deposit amount, if any:"
+        android:layout_above="@+id/initialDepositEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
 
     <EditText
         android:id="@+id/initialDepositEditText"
@@ -68,21 +68,19 @@
         android:hint="Initial deposit"
         android:inputType="number"
         android:padding="5dp"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/initialTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/additionalDepositTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp" />
 
     <TextView
         android:id="@+id/additionalDepositTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/initialDepositEditText"
-        android:layout_marginTop="21dp"
-        android:text="Then enter the amount you want to save per month:"
-        android:textColor="@android:color/holo_green_dark" />
+        android:text="2. Then enter the amount you want to save per month:"
+
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/initialTextView"
+        android:layout_alignStart="@+id/initialTextView" />
 
     <EditText
         android:id="@+id/additionalDepositEditText"
@@ -92,21 +90,20 @@
         android:hint="Save amount per month"
         android:inputType="number"
         android:padding="5dp"
-        android:layout_marginTop="12dp"
         android:layout_below="@+id/additionalDepositTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
 
     <TextView
         android:id="@+id/durationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/additionalDepositEditText"
-        android:layout_marginTop="21dp"
-        android:text="How many years do you plan to let the money grow?"
-        android:textColor="@android:color/holo_green_dark" />
+        android:text="3. How many years do you plan to let the money grow?"
+
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/additionalDepositEditText"
+        android:layout_alignLeft="@+id/initialTextView"
+        android:layout_alignStart="@+id/initialTextView" />
 
     <EditText
         android:id="@+id/durationEditText"
@@ -116,10 +113,10 @@
         android:hint="For how long?"
         android:inputType="number"
         android:padding="5dp"
-        android:layout_marginTop="14dp"
         android:layout_below="@+id/durationTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/initialDepositEditText"
+        android:layout_alignStart="@+id/initialDepositEditText"
+        android:layout_marginTop="17dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -127,9 +124,8 @@
         android:text="Future Account Balance"
         android:id="@+id/depositButton"
         android:background="@android:color/holo_green_dark"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/durationEditText"
-        android:layout_toRightOf="@+id/durationEditText"
-        android:layout_toEndOf="@+id/durationEditText" />
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

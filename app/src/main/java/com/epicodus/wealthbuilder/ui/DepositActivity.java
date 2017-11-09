@@ -34,10 +34,10 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
         String income = intent.getStringExtra("income");
         int monthlyIncome = Integer.parseInt(income) / 12;
         Log.d("DepositActivity", income);
-        mIncomeTextView.setText("Income per month: " + "$"+ monthlyIncome);
+        mIncomeTextView.setText("Monthly income: " + "$"+ monthlyIncome);
 
         int expense = intent.getIntExtra("expense", 0);
-        mExpenseTextView.setText("Expense per month: " + "$"+ expense);
+        mExpenseTextView.setText("Monthly expense: " + "$"+ expense);
 
         int net = monthlyIncome - expense;
         mNetTextView.setText("Net: " + "$" + net);
