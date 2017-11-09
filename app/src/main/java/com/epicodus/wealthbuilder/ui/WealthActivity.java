@@ -45,7 +45,7 @@ public class WealthActivity extends AppCompatActivity implements View.OnClickLis
 
         Log.d("WealthActivity", "Here is the " + "$"+totalFV);
 
-        mAccountTextView.setText("Future Account value: " + "$"+roundOff);
+        mAccountTextView.setText("CONGRATULATIONS! Here is your future account value: " + "$"+roundOff);
 
         mMutualFunds.setOnClickListener(this);
         m529.setOnClickListener(this);

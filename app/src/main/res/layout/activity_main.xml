@@ -34,13 +34,13 @@
         android:id="@+id/incomeEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/submitIncomeButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
         android:background="@color/colorTextIcons"
-        android:hint="Enter Your Income"
+        android:hint="Enter Your Annual Income"
         android:inputType="number"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp" />
 
     <Button
         android:id="@+id/submitIncomeButton"

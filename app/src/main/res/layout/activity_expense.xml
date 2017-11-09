@@ -4,91 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDivider"
     tools:context="com.epicodus.wealthbuilder.ui.ExpenseActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Your Expenses:"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/incomeTextView"
-        android:layout_toLeftOf="@+id/submitExpenseButton"
-        android:layout_toStartOf="@+id/submitExpenseButton" />
+        android:layout_alignEnd="@+id/expenseChartButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/expenseChartButton"
+        android:layout_marginTop="19dp"
+        android:text="Enter Your Expenses PER MONTH:"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/housingEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
         android:background="@color/colorTextIcons"
         android:hint="Housing"
         android:inputType="number"
-        android:padding="5dp"
-        android:layout_marginTop="64dp"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+        android:padding="5dp" />
 
     <EditText
         android:id="@+id/foodEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/housingEditText"
+        android:layout_alignStart="@+id/housingEditText"
+        android:layout_below="@+id/housingEditText"
+        android:layout_marginTop="21dp"
         android:background="@color/colorTextIcons"
         android:hint="Food"
         android:inputType="number"
-        android:padding="5dp"
-        android:layout_below="@+id/housingEditText"
-        android:layout_alignLeft="@+id/housingEditText"
-        android:layout_alignStart="@+id/housingEditText"
-        android:layout_marginTop="21dp" />
+        android:padding="5dp" />
 
     <EditText
         android:id="@+id/transportationEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/foodEditText"
+        android:layout_alignStart="@+id/foodEditText"
+        android:layout_below="@+id/foodEditText"
+        android:layout_marginTop="13dp"
         android:background="@color/colorTextIcons"
         android:hint="Transportation"
         android:inputType="number"
-        android:padding="5dp"
-        android:layout_below="@+id/foodEditText"
-        android:layout_alignLeft="@+id/foodEditText"
-        android:layout_alignStart="@+id/foodEditText"
-        android:layout_marginTop="13dp" />
+        android:padding="5dp" />
 
     <EditText
         android:id="@+id/miscEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/foodEditText"
+        android:layout_alignRight="@+id/foodEditText"
+        android:layout_below="@+id/transportationEditText"
+        android:layout_marginTop="19dp"
         android:background="@color/colorTextIcons"
         android:hint="Misc"
         android:inputType="number"
-        android:padding="5dp"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/transportationEditText"
-        android:layout_alignRight="@+id/foodEditText"
-        android:layout_alignEnd="@+id/foodEditText" />
+        android:padding="5dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="What's left"
         android:id="@+id/submitExpenseButton"
-        android:background="@android:color/holo_green_dark"
-        android:layout_marginBottom="32dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/transportationEditText"
-        android:layout_toStartOf="@+id/transportationEditText" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="See chart"
-        android:id="@+id/expenseChartButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_toLeftOf="@+id/transportationEditText"
+        android:layout_toStartOf="@+id/transportationEditText"
         android:background="@android:color/holo_green_dark"
+        android:text="What's left" />
+
+    <Button
+        android:id="@+id/expenseChartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/submitExpenseButton"
         android:layout_alignBottom="@+id/submitExpenseButton"
-        android:layout_toRightOf="@+id/housingEditText"
-        android:layout_toEndOf="@+id/housingEditText"
         android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp" />
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/housingEditText"
+        android:layout_toRightOf="@+id/housingEditText"
+        android:background="@android:color/holo_green_dark"
+        android:text="See chart" />
 
 </RelativeLayout>

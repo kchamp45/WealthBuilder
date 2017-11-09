@@ -10,68 +10,75 @@
         android:id="@+id/accountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="future value"
+        android:textColor="@color/colorGreen"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/money"
+        android:layout_below="@+id/accountTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="118dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="28dp"
-        android:text="future value"
-        android:textColor="@color/colorGreen" />
+        android:layout_marginTop="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/investmentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Learn About Investment Options:"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/accountTextView"
+        android:text="Learn About Different Investment Options:"
+        android:textColor="?attr/colorAccent"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/mutualFundsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="25 Top Mutual Funds:"
+        android:text="25 Top Mutual Funds"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:layout_marginTop="28dp"
         android:layout_below="@+id/investmentTextView"
-        android:layout_alignLeft="@+id/investmentTextView"
-        android:layout_alignStart="@+id/investmentTextView"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="35dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/iRATextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Individual Retirement Account:"
-        android:layout_marginTop="40dp"
+        android:text="Individual Retirement Account"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/mutualFundsTextView"
-        android:layout_alignLeft="@+id/investmentTextView"
-        android:layout_alignStart="@+id/investmentTextView" />
-
-    <TextView
-    android:id="@+id/rEITTextView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Real Estate Investment Trust:"
-    android:layout_marginTop="51dp"
-        android:layout_below="@+id/iRATextView"
-        android:layout_alignRight="@+id/iRATextView"
-        android:layout_alignEnd="@+id/iRATextView" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/c529TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="College Savings:"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/rEITTextView"
-        android:layout_alignRight="@+id/mutualFundsTextView"
-        android:layout_alignEnd="@+id/mutualFundsTextView"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
+        android:text="College Savings"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/iRATextView"
+        android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:id="@+id/rEITTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Real Estate Investment Trust"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/c529TextView"
+        android:layout_alignLeft="@+id/iRATextView"
+        android:layout_alignStart="@+id/iRATextView" />
 
 
 </RelativeLayout>
