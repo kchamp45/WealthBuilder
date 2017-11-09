@@ -1,9 +1,11 @@
 package com.epicodus.wealthbuilder.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,10 +15,11 @@ import com.epicodus.wealthbuilder.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class WealthActivity extends AppCompatActivity {
-//    @Bind(R.id.initialDepositEditText) EditText mInitialDepositEditText;
-//    @Bind(R.id.additionalDepositEditText) EditText mAdditionalDepositEditText;
-//    @Bind(R.id.durationEditText) EditText mDurationEditText;
+public class WealthActivity extends AppCompatActivity implements View.OnClickListener {
+    @Bind(R.id.mutualFundsTextView) TextView mMutualFunds;
+    @Bind(R.id.iRATextView) TextView mIRA;
+    @Bind(R.id.rEITTextView) TextView mREIT;
+    @Bind(R.id.c529TextView) TextView m529;
     @Bind(R.id.accountTextView) TextView mAccountTextView;
 
     @Override
@@ -44,21 +47,36 @@ public class WealthActivity extends AppCompatActivity {
 
         mAccountTextView.setText("Future Account value: " + "$"+roundOff);
 
+        mMutualFunds.setOnClickListener(this);
+        m529.setOnClickListener(this);
+        mIRA.setOnClickListener(this);
+        mREIT.setOnClickListener(this);
     }
 
-//
-//    Intent intent = getIntent();
-//    String income = intent.getStringExtra("income");
-//    FV = future value;
-//    P = initial principle
-//    i = interest rate;
-//    r = (i)/100;
-//    n = number of investment years;
-//    A = additional contribution amount;
-//    F = frequency of contribution;
-//
-//    function accountBalance {
-//        FV = P* Math.pow((1 + r), n) + (A*F)(Math.pow(1+r), n-1);
-//        return FV;
+    @Override
+    public void onClick(View v) {
+
+        if (v == mMutualFunds) {
+            Uri webpage = Uri.parse("https://www.kiplinger.com/slideshow/investing/T033-S002-kip-25-best-no-load-mutual-funds-2017/index.html");
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            startActivity(webIntent);
+        }
+        if(v == m529){
+            Uri webpage = Uri.parse("https://www.savingforcollege.com/intro-to-529s/what-is-a-529-plan");
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            startActivity(webIntent);
+        }
+        if(v == mIRA){
+                Uri webpage = Uri.parse("http://money.cnn.com/retirement/guide/IRA_Basics.moneymag/index.htm");
+                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+                startActivity(webIntent);
+        }
+        if(v == mREIT){
+            Uri webpage = Uri.parse("https://www.investopedia.com/articles/etfs/top-real-estate-etfs/");
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            startActivity(webIntent);
+        }
+    }
+
 
 }

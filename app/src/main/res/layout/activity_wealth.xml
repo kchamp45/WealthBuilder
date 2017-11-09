@@ -10,29 +10,68 @@
         android:id="@+id/accountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="future value"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="118dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="28dp"
+        android:text="future value"
+        android:textColor="@color/colorGreen" />
 
     <TextView
         android:id="@+id/investmentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Learn About Investment Options:"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/accountTextView"
+        android:layout_centerHorizontal="true" />
 
-    <Button
+    <TextView
+        android:id="@+id/mutualFundsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Learn More Investment Options"
-        android:id="@+id/investmentButton"
-        android:background="@android:color/holo_green_dark"
+        android:text="25 Top Mutual Funds:"
+        android:layout_below="@+id/investmentTextView"
+        android:layout_alignLeft="@+id/investmentTextView"
+        android:layout_alignStart="@+id/investmentTextView"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/iRATextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Individual Retirement Account:"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/accountTextView"/>
+        android:layout_below="@+id/mutualFundsTextView"
+        android:layout_alignLeft="@+id/investmentTextView"
+        android:layout_alignStart="@+id/investmentTextView" />
+
+    <TextView
+    android:id="@+id/rEITTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Real Estate Investment Trust:"
+    android:layout_marginTop="51dp"
+        android:layout_below="@+id/iRATextView"
+        android:layout_alignRight="@+id/iRATextView"
+        android:layout_alignEnd="@+id/iRATextView" />
+
+    <TextView
+        android:id="@+id/c529TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="College Savings:"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/rEITTextView"
+        android:layout_alignRight="@+id/mutualFundsTextView"
+        android:layout_alignEnd="@+id/mutualFundsTextView"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
+
+
 
 </RelativeLayout>
