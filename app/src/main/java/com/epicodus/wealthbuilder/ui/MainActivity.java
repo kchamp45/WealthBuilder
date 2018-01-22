@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.epicodus.wealthbuilder.R;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.incomeEditText) EditText mIncomeEditText;
     @Bind(R.id.submitIncomeButton) Button mSubmitIncomeButton;
+    @Bind(R.id.radioButton1) RadioButton mRadioButton1;
+    @Bind(R.id.radioButton2) RadioButton mRadioButton2;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -48,8 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-
         mSubmitIncomeButton.setOnClickListener(this);
+        mRadioButton1.setOnClickListener(this);
+        mRadioButton2.setOnClickListener(this);
     }
 
     @Override
@@ -67,10 +72,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v) {
-        String income = mIncomeEditText.getText().toString();
+        int income = Integer.parseInt( mIncomeEditText.getText().toString());
+        int taxIncome = 0;
+        double afterTaxIncome = 0;
+        double tax = 0;
+
         Toast.makeText(MainActivity.this, "$$$$$!", Toast.LENGTH_LONG).show();
+        if(mRadioButton1.isChecked()) {
+            if(income > 12000) {
+                taxIncome = income - 12000;
+                if (taxIncome <= 9525) {
+                    tax = taxIncome * .10;
+                } else if (taxIncome >= 9526 && taxIncome <= 38700) {
+                    tax = 952.5 + (taxIncome - 9525) * .12;
+                } else if (taxIncome >= 38701 && taxIncome <= 82500) {
+                    tax = 5596.5 + (taxIncome - 38700) * .22;
+                }
+                afterTaxIncome = income - tax;
+            }
+            else {
+                afterTaxIncome = income;
+            }
+        }
+        else {
+            if(income > 24000) {
+                taxIncome = income - 24000;
+                    if (taxIncome <= 19050) {
+                        tax = taxIncome * .10;
+                    } else if (taxIncome >= 19051 && taxIncome <= 77400) {
+                        tax = 1905.1 + (taxIncome - 19050) * .12;
+                    } else if (taxIncome >= 77401 && taxIncome <= 165000) {
+                        tax = 9288 + (taxIncome - 77400) * .22;
+                    }
+                    afterTaxIncome = income - tax;
+                }
+                else {
+                    afterTaxIncome = income;
+                }
+            }
+
         Intent intent = new Intent(MainActivity.this, ExpenseActivity.class);
-        intent.putExtra("income", income);
+        intent.putExtra("income", afterTaxIncome);
+        Log.d("MainActivity", "taxIncome");
         startActivity(intent);
     }
 

@@ -31,9 +31,10 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String income = intent.getStringExtra("income");
-        int monthlyIncome = Integer.parseInt(income) / 12;
-        Log.d("DepositActivity", income);
+        double incomeC = intent.getDoubleExtra("incomeB", 0);
+        int monthlyIncome = (int) Math.rint(incomeC / 12);
+//        String income = intent.getStringExtra("income");
+//        int monthlyIncome = Integer.parseInt(income) / 12;
         mIncomeTextView.setText("Monthly income: " + "$"+ monthlyIncome);
 
         int expense = intent.getIntExtra("expense", 0);

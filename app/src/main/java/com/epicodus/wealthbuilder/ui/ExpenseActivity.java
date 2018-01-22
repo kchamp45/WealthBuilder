@@ -44,13 +44,13 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
         int totalExpense = housing + transportation + food + misc;
 
         Intent intent = getIntent();
-        String income = intent.getStringExtra("income");
+        double incomeA = intent.getDoubleExtra("income", 0);
 
         if(v == mSubmitExpenseButton) {
 
             Intent nextIntent = new Intent(ExpenseActivity.this, DepositActivity.class);
             nextIntent.putExtra("expense", totalExpense);
-            nextIntent.putExtra("income", income);
+            nextIntent.putExtra("incomeB", incomeA);
             startActivity(nextIntent);
         }
         if(v == mExpenseChartButton) {
