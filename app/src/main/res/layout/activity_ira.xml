@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.epicodus.wealthbuilder.ui.iraActivity">
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:stretchColumns="*"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="88dp">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#6F9C33" >
+
+        <TextView
+            android:id="@+id/textView11"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp" />
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View style="@style/Divider" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent" >-->
+
+            <!--<View style="@style/Divider_invisible" />-->
+        <!--</LinearLayout>-->
+
+        <TextView
+            android:id="@+id/textView12"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="Traditional IRA"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View style="@style/Divider" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView14"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="Roth IRA"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+    </TableRow>
+        <LinearLayout>
+
+            <View
+                style="@style/Divider_horizontal" />
+        </LinearLayout>
+
+    <!--Row 2-->
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6F9C33" >
+
+    <TextView
+        android:id="@+id/textView20"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:text="Max Contribution"
+        android:textColor="white"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View
+
+            style="@style/Divider" />
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView21"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="$5500"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View style="@style/Divider" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView22"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="$5500"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View style="@style/Divider" />
+        </LinearLayout>
+
+<!--Row 3-->
+    </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6F9C33" >
+
+            <TextView
+                android:id="@+id/textView30"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Contribution Deductible"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View
+
+                    style="@style/Divider" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView31"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Yes"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView32"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="No"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+
+        </TableRow>
+        <!--Row 4-->
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6F9C33" >
+
+            <TextView
+                android:id="@+id/textView40"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Taxable Withdrawal "
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View
+
+                    style="@style/Divider" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView41"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Yes"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView42"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="No"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+
+        </TableRow>
+        <!--Row 5-->
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6F9C33" >
+
+            <TextView
+                android:id="@+id/textView50"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Req'd Min Distribution"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View
+
+                    style="@style/Divider" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView51"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="Yes"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView52"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="10dp"
+                android:text="No"
+                android:textColor="white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent" >
+
+                <View style="@style/Divider" />
+            </LinearLayout>
+
+        </TableRow>
+        <!--Row 6-->
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6F9C33" >
+
+        <TextView
+            android:id="@+id/textView60"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="Deadline"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View
+
+                style="@style/Divider" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView61"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="4/17/2018"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View style="@style/Divider" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView62"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp"
+            android:text="4/17/2018"
+            android:textColor="white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent" >
+
+            <View style="@style/Divider" />
+        </LinearLayout>
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:id="@+id/iraInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learn More About IRAs"
+        android:textColor="?attr/colorAccent"
+        android:layout_below="@+id/table"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/iraHeaderView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Individual Retirement Account"
+        android:layout_alignLeft="@+id/iraInfoTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/iraInfoTextView"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="34dp"
+         />
+
+</RelativeLayout>
