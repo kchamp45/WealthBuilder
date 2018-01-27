@@ -66,11 +66,15 @@ public class WealthActivity extends AppCompatActivity implements View.OnClickLis
             Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
             startActivity(webIntent);
         }
-        if(v == mIRA){
-                Uri webpage = Uri.parse("http://money.cnn.com/retirement/guide/IRA_Basics.moneymag/index.htm");
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-                startActivity(webIntent);
+        if(v == mIRA) {
+            Intent newIntent = new Intent(WealthActivity.this, iraActivity.class);
+            startActivity(newIntent);
         }
+//        if(v == mIRA){
+//                Uri webpage = Uri.parse("http://money.cnn.com/retirement/guide/IRA_Basics.moneymag/index.htm");
+//                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+//                startActivity(webIntent);
+//        }
         if(v == mREIT){
             Uri webpage = Uri.parse("https://www.investopedia.com/articles/etfs/top-real-estate-etfs/");
             Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);

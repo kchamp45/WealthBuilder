@@ -25,10 +25,28 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.wealthbuilder.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.DepositActivity" />
-        <activity android:name=".ui.WealthActivity" />
-        <activity android:name=".ui.PieChartActivity" />
-        <activity android:name=".ui.iraActivity"></activity>
+        <activity android:name=".ui.PieChartActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.wealthbuilder.ui.ExpenseActivity" />
+        </activity>
+        <activity android:name=".ui.DepositActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.wealthbuilder.ui.ExpenseActivity" />
+        </activity>
+        <activity android:name=".ui.WealthActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.wealthbuilder.ui.DepositActivity" />
+        </activity>
+        <activity android:name=".ui.iraActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.wealthbuilder.ui.WealthActivity" />
+        </activity>
+        <activity android:name="ui.PieChartActivity" />
+
     </application>
 
 </manifest>

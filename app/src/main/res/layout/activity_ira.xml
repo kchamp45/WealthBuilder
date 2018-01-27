@@ -14,7 +14,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="88dp">
+        android:layout_marginTop="88dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="5dp">
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -49,7 +51,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="Traditional IRA"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -67,7 +69,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="Roth IRA"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
     </TableRow>
@@ -92,7 +94,7 @@
         android:paddingRight="5dp"
         android:paddingTop="10dp"
         android:text="Max Contribution"
-        android:textColor="white"
+        android:textColor="#ffffff"
         android:textSize="16sp" />
 
     <LinearLayout
@@ -111,7 +113,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="$5500"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -128,7 +130,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="$5500"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -153,7 +155,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="Contribution Deductible"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -172,7 +174,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="Yes"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -189,7 +191,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="No"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -214,7 +216,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="Taxable Withdrawal "
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -233,7 +235,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="Yes"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -250,7 +252,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="No"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -275,7 +277,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="Req'd Min Distribution"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -294,7 +296,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="Yes"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -311,7 +313,7 @@
                 android:paddingRight="5dp"
                 android:paddingTop="10dp"
                 android:text="No"
-                android:textColor="white"
+                android:textColor="#ffffff"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -336,7 +338,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="Deadline"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -355,7 +357,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="4/17/2018"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -372,7 +374,7 @@
             android:paddingRight="5dp"
             android:paddingTop="10dp"
             android:text="4/17/2018"
-            android:textColor="white"
+            android:textColor="#ffffff"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -398,13 +400,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Individual Retirement Account"
-        android:layout_alignLeft="@+id/iraInfoTextView"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/iraInfoTextView"
-        android:layout_centerHorizontal="true"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="34dp"
-         />
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
