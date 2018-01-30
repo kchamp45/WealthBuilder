@@ -30,5 +30,6 @@ public class iraActivity extends AppCompatActivity implements View.OnClickListen
             Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
             startActivity(webIntent);
         }
+
     }
 }
