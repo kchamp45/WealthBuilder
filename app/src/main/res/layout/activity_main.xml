@@ -95,8 +95,6 @@
             android:layout_marginLeft="80dp"
             android:text="Married" />
 
-
-
     </RadioGroup>
 
     <Button

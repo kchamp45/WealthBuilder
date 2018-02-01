@@ -1,9 +1,12 @@
 package com.epicodus.wealthbuilder.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -77,13 +81,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        if (TextUtils.isEmpty(mIncomeEditText.getText()) || TextUtils.isEmpty(mPerExemption.getText()))
+        {
+            Toast.makeText(getApplicationContext(), "income is empty", Toast.LENGTH_SHORT).show();
+
+        } else {
         int income = Integer.parseInt(mIncomeEditText.getText().toString());
         int n = Integer.parseInt(mPerExemption.getText().toString());
         int taxIncome = 0;
         double afterTaxIncome = 0;
         double tax = 0;
-
-        Toast.makeText(MainActivity.this, "$$$$$!", Toast.LENGTH_LONG).show();
 
         if (mRadioButton1.isChecked()) {
 
@@ -94,12 +101,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             afterTaxIncome = income - this.mFedTax(income) - this.mOrTax(income, n);
         }
 
-        Intent intent = new Intent(MainActivity.this, ExpenseActivity.class);
-        intent.putExtra("income", afterTaxIncome);
-        Log.d("MainActivity", "afterTaxIncome");
-        startActivity(intent);
+        if (v == mSubmitIncomeButton) {
 
+
+                Intent intent = new Intent(getApplicationContext(), ExpenseActivity.class);
+                intent.putExtra("income", afterTaxIncome);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, "$$$$$!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
+
     double sFedTax(int income) {
         double sfedTax = 0;
         double fedTaxableInc = 0;

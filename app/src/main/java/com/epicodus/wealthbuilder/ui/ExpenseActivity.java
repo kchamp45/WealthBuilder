@@ -1,6 +1,8 @@
 package com.epicodus.wealthbuilder.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.epicodus.wealthbuilder.Constants;
 import com.epicodus.wealthbuilder.R;
 
 import org.parceler.Parcels;
@@ -25,35 +28,45 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.submitExpenseButton) Button mSubmitExpenseButton;
     @Bind(R.id.expenseChartButton) Button mExpenseChartButton;
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense);
         ButterKnife.bind(this);
 
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
         mSubmitExpenseButton.setOnClickListener(this);
         mExpenseChartButton.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v){
+    public void onClick(View v) {
+
         int housing = Integer.parseInt(mHousingEditText.getText().toString());
         int transportation = Integer.parseInt(mTransportationEditText.getText().toString());
         int food = Integer.parseInt(mFoodEditText.getText().toString());
         int misc = Integer.parseInt(mMiscEditText.getText().toString());
         int totalExpense = housing + transportation + food + misc;
 
+        addToSharedPreferences(housing);
+
         Intent intent = getIntent();
         double incomeA = intent.getDoubleExtra("income", 0);
 
-        if(v == mSubmitExpenseButton) {
+        if (v == mSubmitExpenseButton) {
 
             Intent nextIntent = new Intent(ExpenseActivity.this, DepositActivity.class);
             nextIntent.putExtra("expense", totalExpense);
             nextIntent.putExtra("incomeB", incomeA);
             startActivity(nextIntent);
         }
-        if(v == mExpenseChartButton) {
+        if (v == mExpenseChartButton) {
+
             Intent chartIntent = new Intent(ExpenseActivity.this, PieChartActivity.class);
             chartIntent.putExtra("housing", housing);
             chartIntent.putExtra("transportation", transportation);
@@ -62,5 +75,12 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(chartIntent);
         }
     }
+
+        private void addToSharedPreferences(int housing) {
+            mEditor.putInt(Constants.PREFERENCES_HOUSING_KEY, housing).apply();
+            mEditor.commit();
+
+        }
+    
 
 }

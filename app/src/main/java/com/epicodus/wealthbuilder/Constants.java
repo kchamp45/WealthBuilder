@@ -5,4 +5,5 @@ package com.epicodus.wealthbuilder;
  */
 
 public class Constants {
+    public static final String PREFERENCES_HOUSING_KEY = "housing";
 }
