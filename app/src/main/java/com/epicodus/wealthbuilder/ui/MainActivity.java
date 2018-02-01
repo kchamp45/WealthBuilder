@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (TextUtils.isEmpty(mIncomeEditText.getText()) || TextUtils.isEmpty(mPerExemption.getText()))
         {
-            Toast.makeText(getApplicationContext(), "income is empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "a field is empty", Toast.LENGTH_SHORT).show();
 
         } else {
         int income = Integer.parseInt(mIncomeEditText.getText().toString());
@@ -124,15 +124,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 sfedTax = 952.5 + (fedTaxableInc - 9525) * .12;
             } else if (fedTaxableInc > 38700 && fedTaxableInc <= 82500) {
                 sfedTax = 5596.5 + (fedTaxableInc - 38700) * .22;
-            } else if(fedTaxableInc >82500 && fedTaxableInc<= 157500) {
+            } else if (fedTaxableInc > 82500 && fedTaxableInc <= 157500) {
                 sfedTax = 18150 + (fedTaxableInc - 82500) * .24;
-            } else if(fedTaxableInc > 157500 && fedTaxableInc <= 200000) {
+            } else if (fedTaxableInc > 157500 && fedTaxableInc <= 200000) {
                 sfedTax = 37800 + (fedTaxableInc - 157500) * .32;
-            } else if(fedTaxableInc > 200000 && fedTaxableInc <= 500000) {
+            } else if (fedTaxableInc > 200000 && fedTaxableInc <= 500000) {
                 sfedTax = 64000 + (fedTaxableInc - 200000) * .35;
             } else {
                 sfedTax = 175000 + (fedTaxableInc - 500000) * .37;
             }
+        } else {
+            sfedTax = 0;
 
         }
         return sfedTax;
@@ -158,6 +160,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } else {
                 mfedTax = 210000 + (fedTaxableInc - 600000) * .37;
             }
+        } else {
+            mfedTax = 0;
         }
         return mfedTax;
     }

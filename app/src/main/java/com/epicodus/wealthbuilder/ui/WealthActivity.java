@@ -1,6 +1,7 @@
 package com.epicodus.wealthbuilder.ui;
 
 import android.content.Intent;
+import java.text.NumberFormat;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.epicodus.wealthbuilder.R;
+
+import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,10 +45,11 @@ public class WealthActivity extends AppCompatActivity implements View.OnClickLis
         }
         double totalFV = FV + iDeposit * Math.pow(1.07, years);
         double roundOff = Math.floor(totalFV*100)/100;
+        String finalNumber = NumberFormat.getInstance().format(roundOff);
 
         Log.d("WealthActivity", "Here is the " + "$"+totalFV);
 
-        mAccountTextView.setText("CONGRATULATIONS! Here is your future account value: " + "$"+roundOff);
+        mAccountTextView.setText("CONGRATULATIONS! Here is your future account value: " + "$"+finalNumber);
 
         mMutualFunds.setOnClickListener(this);
         m529.setOnClickListener(this);
