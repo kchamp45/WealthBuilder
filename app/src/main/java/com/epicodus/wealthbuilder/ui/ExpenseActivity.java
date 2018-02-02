@@ -5,11 +5,13 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epicodus.wealthbuilder.Constants;
 import com.epicodus.wealthbuilder.R;
@@ -47,38 +49,46 @@ public class ExpenseActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
 
-        int housing = Integer.parseInt(mHousingEditText.getText().toString());
-        int transportation = Integer.parseInt(mTransportationEditText.getText().toString());
-        int food = Integer.parseInt(mFoodEditText.getText().toString());
-        int misc = Integer.parseInt(mMiscEditText.getText().toString());
-        int totalExpense = housing + transportation + food + misc;
+        if (TextUtils.isEmpty(mHousingEditText.getText()) || TextUtils.isEmpty(mFoodEditText.getText()) || TextUtils.isEmpty(mTransportationEditText.getText()) || TextUtils.isEmpty(mMiscEditText.getText()))
+        {
+            Toast.makeText(getApplicationContext(), "please fill in all fields", Toast.LENGTH_SHORT).show();
 
-        addToSharedPreferences(housing);
+        } else{
+            int housing = Integer.parseInt(mHousingEditText.getText().toString());
+            int transportation = Integer.parseInt(mTransportationEditText.getText().toString());
+            int food = Integer.parseInt(mFoodEditText.getText().toString());
+            int misc = Integer.parseInt(mMiscEditText.getText().toString());
+            int totalExpense = housing + transportation + food + misc;
 
-        Intent intent = getIntent();
-        double incomeA = intent.getDoubleExtra("income", 0);
+            addToSharedPreferences(housing, food, transportation, misc);
 
-        if (v == mSubmitExpenseButton) {
+            Intent intent = getIntent();
+            double incomeA = intent.getDoubleExtra("income", 0);
 
-            Intent nextIntent = new Intent(ExpenseActivity.this, DepositActivity.class);
-            nextIntent.putExtra("expense", totalExpense);
-            nextIntent.putExtra("incomeB", incomeA);
-            startActivity(nextIntent);
-        }
-        if (v == mExpenseChartButton) {
+            if (v == mSubmitExpenseButton) {
 
-            Intent chartIntent = new Intent(ExpenseActivity.this, PieChartActivity.class);
-            chartIntent.putExtra("housing", housing);
-            chartIntent.putExtra("transportation", transportation);
-            chartIntent.putExtra("food", food);
-            chartIntent.putExtra("misc", misc);
-            startActivity(chartIntent);
+                Intent nextIntent = new Intent(ExpenseActivity.this, DepositActivity.class);
+                nextIntent.putExtra("expense", totalExpense);
+                nextIntent.putExtra("incomeB", incomeA);
+                startActivity(nextIntent);
+            }
+            if (v == mExpenseChartButton) {
+
+                Intent chartIntent = new Intent(ExpenseActivity.this, PieChartActivity.class);
+                chartIntent.putExtra("housing", housing);
+                chartIntent.putExtra("transportation", transportation);
+                chartIntent.putExtra("food", food);
+                chartIntent.putExtra("misc", misc);
+                startActivity(chartIntent);
+            }
         }
     }
 
-        private void addToSharedPreferences(int housing) {
+        private void addToSharedPreferences(int housing, int food, int transportation, int misc) {
             mEditor.putInt(Constants.PREFERENCES_HOUSING_KEY, housing).apply();
-            mEditor.commit();
+            mEditor.putInt(Constants.PREFERENCES_FOOD_KEY, food).apply();
+            mEditor.putInt(Constants.PREFERENCES_TRANSPORTATION_KEY, transportation).apply();
+            mEditor.putInt(Constants.PREFERENCES_MISC_KEY, misc).apply();
 
         }
     

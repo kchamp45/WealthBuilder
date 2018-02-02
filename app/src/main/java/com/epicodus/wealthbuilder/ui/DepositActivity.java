@@ -3,11 +3,13 @@ package com.epicodus.wealthbuilder.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epicodus.wealthbuilder.R;
 
@@ -48,16 +50,21 @@ public class DepositActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        String initialDeposit = mInitialDepositEditText.getText().toString();
-        String additionalDeposit = mAdditionalDepositEditText.getText().toString();
-        String duration = mDurationEditText.getText().toString();
+        if (TextUtils.isEmpty(mInitialDepositEditText.getText()) || TextUtils.isEmpty(mAdditionalDepositEditText.getText()) || TextUtils.isEmpty(mDurationEditText.getText())) {
+            Toast.makeText(getApplicationContext(), "please fill in all fields", Toast.LENGTH_SHORT).show();
 
-        if(v == mDepositButton) {
-            Intent newIntent = new Intent(DepositActivity.this, WealthActivity.class);
-            newIntent.putExtra("iDeposit", initialDeposit);
-            newIntent.putExtra("aDeposit", additionalDeposit);
-            newIntent.putExtra("duration", duration);
-            startActivity(newIntent);
+        } else {
+            String initialDeposit = mInitialDepositEditText.getText().toString();
+            String additionalDeposit = mAdditionalDepositEditText.getText().toString();
+            String duration = mDurationEditText.getText().toString();
+
+            if (v == mDepositButton) {
+                Intent newIntent = new Intent(DepositActivity.this, WealthActivity.class);
+                newIntent.putExtra("iDeposit", initialDeposit);
+                newIntent.putExtra("aDeposit", additionalDeposit);
+                newIntent.putExtra("duration", duration);
+                startActivity(newIntent);
+            }
         }
     }
 }
